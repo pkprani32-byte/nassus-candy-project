@@ -1,0 +1,158 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ========================================================================================= */
+/* 🎨 THEME VARIABLES */
+/* ========================================================================================= */
+:root {
+    --primary: #e94560;
+    --secondary: #533483;
+    --bg-dark: #0f111a;
+    --bg-card: rgba(22, 33, 62, 0.6);
+    --text-color: #e0e0e0;
+    --accent: #0f3460;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================================================================= */
+/* 🏠 GLOBAL STYLES */
+/* ========================================================================================= */
+html, body, [class*="css"] {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-color);
+}
+
+/* App Background with Radial Gradients */
+[data-testid="stAppViewContainer"] {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(233,69,96,0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(83,52,131,0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(15,52,96,0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: rgba(22, 27, 34, 0.95);
+    border-right: 1px solid var(--glass-border);
+}
+
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3 {
+    color: var(--primary) !important;
+}
+
+/* ========================================================================================= */
+/* 📊 COMPONENTS */
+/* ========================================================================================= */
+
+/* Metric/KPI Cards - Glassmorphism */
+div[data-testid="stMetric"] {
+    background: linear-gradient(145deg, var(--glass-highlight), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+div[data-testid="stMetric"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(233,69,96,0.15);
+    border-color: rgba(233,69,96,0.3);
+}
+
+div[data-testid="stMetricLabel"] {
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500;
+}
+
+div[data-testid="stMetricValue"] {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 2rem !important;
+    text-shadow: 0 0 20px rgba(233,69,96,0.3);
+}
+
+/* Headers */
+h1 {
+    background: linear-gradient(90deg, #e94560 0%, #ff8fa3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+h2, h3 {
+    color: #f0f0f0 !important;
+    font-weight: 600 !important;
+}
+
+/* Plotly Chart Containers */
+div[data-testid="stPlotlyChart"] {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1rem;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+.stButton > button {
+    background: linear-gradient(45deg, #e94560, #b03046);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(233,69,96,0.4);
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background-color: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    color: #aaa;
+    padding: 8px 16px;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: rgba(233,69,96,0.2) !important;
+    color: #fff !important;
+    border-color: #e94560 !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f111a; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333; 
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e94560; 
+}
